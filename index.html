@@ -14,17 +14,95 @@
                 <span class="button yellow"></span>
                 <span class="button green"></span>
             </div>
-            <div class="title">user@linux: ~</div>
+            <div class="title">HARRY@linux: ~</div>
         </div>
         <div class="terminal-body">
             <pre class="output">
 HARRY@linux:~$ ls
-Desktop  Documents  Downloads  Music  Pictures  Videos HARRYv6 FILE HARRYv4
-HARRYv3 
+
+Desktop  Documents  Downloads  Music  Pictures  Videos
+<a href="#tools" onclick="handleClick('tools')">Tools</a>  <a href="#harryv6" onclick="handleClick('harryv6')">HARRYv6</a>  <a href="#file" onclick="handleClick('file')">FILE</a>  <a href="#groups" onclick="handleClick('groups')">Groups</a>  <a href="#contactadmin" onclick="handleClick('contactadmin')">Contact</a>
+
 HARRY@linux:~$ 
             </pre>
             <input type="text" class="input" autofocus>
         </div>
     </div>
+
+    <script>
+        function handleClick(command) {
+            const output = document.querySelector('.output');
+
+            output.innerHTML = '';
+
+            switch (command) {
+                case 'tools':
+                    output.innerHTML += `HARRY@linux:~$ ls
+
+Desktop  Documents  Downloads  Music  Pictures  Videos
+<a href="#tools" onclick="handleClick('tools')">Tools</a>  <a href="#harryv6" onclick="handleClick('harryv6')">HARRYv6</a>  <a href="#file" onclick="handleClick('file')">FILE</a>  <a href="#groups" onclick="handleClick('groups')">Groups</a>  <a href="#contactadmin" onclick="handleClick('contactadmin')">Contact</a>
+
+HARRY@linux:~$ cd tools && ls
+
+<a href="https://github.com/HARRY-EXE/HARRYv6">HARRYv6</a>  <a href="https://github.com/HARRY-EXE/FILE">FILE</a>  <a href="https://github.com/HARRY-EXE/HARRYv4">HARRYv4</a>  <a href="https://github.com/HARRY-EXE/HARRYv3">HARRYv3</a>`;
+                    break;
+                case 'harryv6':
+                    output.innerHTML += `HARRY@linux:~$ ls
+
+Desktop  Documents  Downloads  Music  Pictures  Videos
+<a href="#tools" onclick="handleClick('tools')">Tools</a>  <a href="#harryv6" onclick="handleClick('harryv6')">HARRYv6</a>  <a href="#file" onclick="handleClick('file')">FILE</a>  <a href="#groups" onclick="handleClick('groups')">Groups</a>  <a href="#contactadmin" onclick="handleClick('contactadmin')">Contact</a>
+
+HARRY@linux:~$ cat HARRYv6
+
+pkg install python
+pkg install git
+rm -rf HARRYv6
+git clone --depth=1 https://github.com/HARRY-EXE/HARRYv6
+cd HARRYv6
+pip install -r requirements.txt
+python3 run.py
+`;
+                    break;
+                case 'file':
+                    output.innerHTML += `HARRY@linux:~$ ls
+
+Desktop  Documents  Downloads  Music  Pictures  Videos
+<a href="#tools" onclick="handleClick('tools')">Tools</a>  <a href="#harryv6" onclick="handleClick('harryv6')">HARRYv6</a>  <a href="#file" onclick="handleClick('file')">FILE</a>  <a href="#groups" onclick="handleClick('groups')">Groups</a>  <a href="#contactadmin" onclick="handleClick('contactadmin')">Contact</a>
+
+HARRY@linux:~$ cat FILE
+
+pkg install python
+pkg install git
+rm -rf HARRYv6
+git clone --depth=1 https://github.com/HARRY-EXE/FILE
+cd FILE
+pip install -r requirements.txt
+python3 run.py`;
+                    break;
+                case 'groups':
+                    output.innerHTML += `HARRY@linux:~$ ls
+
+Desktop  Documents  Downloads  Music  Pictures  Videos
+<a href="#tools" onclick="handleClick('tools')">Tools</a>  <a href="#harryv6" onclick="handleClick('harryv6')">HARRYv6</a>  <a href="#file" onclick="handleClick('file')">FILE</a>  <a href="#groups" onclick="handleClick('groups')">Groups</a>  <a href="#contactadmin" onclick="handleClick('contactadmin')">Contact</a>
+
+HARRY@linux:~$ cd Groups && ls
+
+<a href="https://m.me/j/AbZ5MBJIi2EEzb9J/">Facebook</a>  <a href="https://chat.whatsapp.com/FnIdtCfWUI502l0qmwd9kI">Whatsapp</a>  <a href="https://t.me/+1yHJ0NvwjlUwY2Fl">Telegram</a>`
+                    break;
+                case 'contactadmin':
+                    output.innerHTML += `HARRY@linux:~$ ls
+
+Desktop  Documents  Downloads  Music  Pictures  Videos
+<a href="#tools" onclick="handleClick('tools')">Tools</a>  <a href="#harryv6" onclick="handleClick('harryv6')">HARRYv6</a>  <a href="#file" onclick="handleClick('file')">FILE</a>  <a href="#groups" onclick="handleClick('groups')">Groups</a>  <a href="#contactadmin" onclick="handleClick('contactadmin')">Contact</a>
+
+HARRY@linux:~$ cd Contact && ls
+
+<a href="https://github.com/HARRY-EXE">Github</a>  <a href="https://www.facebook.com/profile.php?id=61561230240600">Facebook</a>  <a href="https://api.whatsapp.com/send/?phone=%2B9779746638816&text&type=phone_number&app_absent=0">Whatsapp</a>  <a href="https://t.me/harryexeee">Telegram</a>`;
+                    break;
+                default:
+                    break;
+            }
+        }
+    </script>
 </body>
 </html>

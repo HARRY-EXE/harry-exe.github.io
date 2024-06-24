@@ -77,3 +77,8 @@ body {
     font-size: 1rem;
     outline: none;
 }
+
+.output a {
+    color: inherit;
+    text-decoration: none;
+}

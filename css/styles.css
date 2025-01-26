@@ -667,15 +667,14 @@ section h2:hover::before {
 
 .projects-grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
-    gap: 1rem;
-    margin-top: 1rem;
-    perspective: 1000px;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin: 2rem 1rem;
 }
 
 .project-card {
     background: var(--card-bg);
-    padding: 1.5rem;
+    padding: 2rem;
     border-radius: 20px;
     box-shadow: var(--card-shadow);
     border: 1px solid rgba(var(--secondary-color-rgb), 0.1);
@@ -684,18 +683,36 @@ section h2:hover::before {
     overflow: hidden;
     display: flex;
     flex-direction: column;
-    gap: 1rem;
-    min-height: 280px;
+    gap: 1.5rem;
+    min-height: 300px;
 }
 
-.project-card::before {
-    display: none;
+.project-card h3 {
+    font-size: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-color);
 }
 
-.projects-grid:hover .project-card:not(:hover) {
-    transform: scale(0.98);
-    filter: brightness(0.95);
-    opacity: 0.9;
+.project-card p {
+    color: var(--text-muted);
+    line-height: 1.6;
+    margin-bottom: 1rem;
+}
+
+.project-card .technologies {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+}
+
+.project-card .tech-tag {
+    background: var(--darker-bg);
+    color: var(--secondary-color);
+    padding: 0.5rem 1rem;
+    border-radius: 50px;
+    font-size: 0.85rem;
+    font-weight: 500;
 }
 
 .project-card:hover {
@@ -1552,7 +1569,9 @@ nav {
     }
 
     .projects-grid {
-        grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+        grid-template-columns: 1fr;
+        gap: 1.5rem;
+        margin: 1.5rem 0.75rem;
     }
 
     .cta-buttons {
@@ -1576,6 +1595,42 @@ nav {
     .qualification-card,
     .project-card {
         padding: 1.25rem;
+    }
+
+    .project-card {
+        min-height: auto;
+        gap: 1rem;
+    }
+
+    .project-card h3 {
+        font-size: 1.3rem;
+        margin-bottom: 0.75rem;
+    }
+
+    .project-card p {
+        font-size: 0.95rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-card .technologies {
+        gap: 0.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .project-card .tech-tag {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.8rem;
+    }
+
+    .project-card .project-links {
+    gap: 1rem;
+        flex-direction: column;
+    }
+
+    .project-card .project-links a {
+        width: 100%;
+        text-align: center;
+        padding: 0.75rem;
     }
 }
 
@@ -1629,7 +1684,7 @@ nav {
 /* Fix landscape mode on mobile */
 @media (max-height: 600px) and (orientation: landscape) {
     section {
-        min-height: auto;
+    min-height: auto;
         padding: 3rem 1rem;
     }
 

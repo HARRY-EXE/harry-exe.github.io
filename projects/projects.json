@@ -1,0 +1,26 @@
+{
+    "projects": [
+        {
+            "title": "HARRYv6",
+            "description": "A free tool for cracking public files, featuring Facebook automation (auto like and comment), multiple cracking methods, and an optimized file maker. Regular updates ensure continued functionality.",
+            "technologies": ["Python"],
+            "github": "https://github.com/HARRY-EXE/HARRYv6",
+            "featured": true
+        },
+        {
+            "title": "FILE MAKER",
+            "description": "A free tool designed for rapid creation of both simple and unlimited types of Facebook files, optimized for efficient cracking processes. Enables fast and unlimited creation of Facebook files.",
+            "technologies": ["Python"],
+            "github": "https://github.com/HARRY-EXE/FILE",
+            "featured": true
+        },
+        {
+            "title": "LIVE UID CHECKER",
+            "description": "A high-speed tool for professionals to verify the status of cloned or cracked IDs, distinguishing between active and inactive ones swiftly. Perfect for professional-grade efficiency.",
+            "technologies": ["HTML", "CSS", "JavaScript"],
+            "github": "https://github.com/HARRY-EXE/live-uid-checker",
+            "website": "https://harry-exe.github.io/live-uid-checker/",
+            "featured": false
+        }
+    ]
+} 

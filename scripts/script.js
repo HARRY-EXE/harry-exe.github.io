@@ -1,34 +1,44 @@
-// Project data
-const projects = [
-    {
-        title: "HARRYv6",
-        description: "A free tool for cracking public files, featuring Facebook automation (auto like and comment), multiple cracking methods, and an optimized file maker. Regular updates ensure continued functionality.",
-        technologies: ["Python"],
-        github: "https://github.com/HARRY-EXE/HARRYv6",
-    },
-    {
-        title: "FILE MAKER",
-        description: "A free tool designed for rapid creation of both simple and unlimited types of Facebook files, optimized for efficient cracking processes. Enables fast and unlimited creation of Facebook files.",
-        technologies: ["Python"],
-        github: "https://github.com/HARRY-EXE/FILE",
-    },
-    {
-        title: "LIVE UID CHECKER",
-        description: "A high-speed tool for professionals to verify the status of cloned or cracked IDs, distinguishing between active and inactive ones swiftly. Perfect for professional-grade efficiency.",
-        technologies: ["HTML", "CSS", "JavaScript"],
-        github: "#",
+// Replace the existing projects array and createProjectCards function with:
+async function loadProjects() {
+    try {
+        const response = await fetch('projects/projects.json');
+        if (!response.ok) {
+            throw new Error('Failed to load projects');
+        }
+        const data = await response.json();
+        return data.projects;
+    } catch (error) {
+        console.error('Error loading projects:', error);
+        return [];
     }
-];
+}
 
-// Function to create project cards
-function createProjectCards() {
+async function createProjectCards() {
     const projectsGrid = document.querySelector('.projects-grid');
+    const projects = await loadProjects();
     
     projects.forEach((project, index) => {
         const card = document.createElement('div');
         card.className = 'project-card';
         card.setAttribute('data-aos', 'fade-up');
         card.setAttribute('data-aos-delay', index * 100);
+        
+        // Create links HTML based on available URLs
+        const linksHTML = [];
+        if (project.github) {
+            linksHTML.push(`
+                <a href="${project.github}" target="_blank">
+                    <i class="fab fa-github"></i> GitHub
+                </a>
+            `);
+        }
+        if (project.website) {
+            linksHTML.push(`
+                <a href="${project.website}" target="_blank">
+                    <i class="fas fa-globe"></i> Website
+                </a>
+            `);
+        }
         
         card.innerHTML = `
             <h3>${project.title}</h3>
@@ -37,9 +47,7 @@ function createProjectCards() {
                 ${project.technologies.map(tech => `<span class="tech-tag">${tech}</span>`).join('')}
             </div>
             <div class="project-links">
-                <a href="${project.github}" target="_blank">
-                    <i class="fab fa-github"></i> GitHub
-                </a>
+                ${linksHTML.join('')}
             </div>
         `;
         
@@ -47,15 +55,71 @@ function createProjectCards() {
     });
 }
 
-// Initialize the portfolio
-document.addEventListener('DOMContentLoaded', () => {
+// Update the initialization to handle async loading
+document.addEventListener('DOMContentLoaded', async () => {
+    // Initialize loading sequence
+    const splashScreen = document.getElementById('splash-screen');
+    const loadingProgress = document.querySelector('.loading-progress');
+    
+    // Simulate loading progress
+    let progress = 0;
+    const loadingInterval = setInterval(() => {
+        progress += Math.random() * 30;
+        if (progress > 100) progress = 100;
+        loadingProgress.style.width = `${progress}%`;
+        
+        if (progress === 100) {
+            clearInterval(loadingInterval);
+            setTimeout(() => {
+                splashScreen.style.opacity = '0';
+                setTimeout(() => {
+                    splashScreen.style.display = 'none';
+                }, 500);
+            }, 500);
+        }
+    }, 500);
+
+    // Initialize rest of your site
     AOS.init({
         duration: 1000,
         once: true,
         offset: 100
     });
-    createProjectCards();
+    await createProjectCards();
     initializeScrollIndicator();
+    
+    // Set initial theme to light
+    document.documentElement.setAttribute('data-theme', 'light');
+    
+    const themeToggleBtn = document.getElementById('theme-toggle-btn');
+    const themeIcon = themeToggleBtn.querySelector('i');
+    
+    // Set initial icon to moon for light theme
+    themeIcon.className = 'fas fa-moon';
+    
+    // Add transition end listener to prevent transition glitches
+    document.documentElement.addEventListener('transitionend', (e) => {
+        if (e.propertyName === 'background-color') {
+            document.documentElement.classList.remove('transitioning');
+        }
+    });
+    
+    themeToggleBtn.addEventListener('click', () => {
+        document.documentElement.classList.add('transitioning');
+        const currentTheme = document.documentElement.getAttribute('data-theme');
+        const newTheme = currentTheme === 'dark' ? 'light' : 'dark';
+        
+        requestAnimationFrame(() => {
+            document.documentElement.setAttribute('data-theme', newTheme);
+            themeIcon.className = newTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
+            localStorage.setItem('theme', newTheme);
+        });
+    });
+    
+    // Apply saved theme or default to light
+    const savedTheme = localStorage.getItem('theme') || 'light';
+    document.documentElement.setAttribute('data-theme', savedTheme);
+    themeIcon.className = savedTheme === 'dark' ? 'fas fa-sun' : 'fas fa-moon';
 });
 
 let isScrolling = false;
@@ -67,43 +131,43 @@ function initializeScrollIndicator() {
     const scrollIndicator = document.createElement('div');
     scrollIndicator.className = 'scroll-indicator';
     
-    // Create dots for each section
-    sections.forEach((section, index) => {
-        const dot = document.createElement('div');
-        dot.className = 'scroll-dot';
-        dot.addEventListener('click', () => {
-            section.scrollIntoView({ behavior: 'smooth' });
+    // Only add scroll indicator on desktop
+    if (window.innerWidth > 768) {
+        sections.forEach((section, index) => {
+            const dot = document.createElement('div');
+            dot.className = 'scroll-dot';
+            dot.addEventListener('click', () => {
+                section.scrollIntoView({ behavior: 'smooth' });
+            });
+            scrollIndicator.appendChild(dot);
         });
-        scrollIndicator.appendChild(dot);
-    });
-    
-    document.body.appendChild(scrollIndicator);
-    
-    // Initialize first dot as active
-    const dots = scrollIndicator.querySelectorAll('.scroll-dot');
-    dots[0].classList.add('active');
-    
-    // Add scroll event listener
-    window.addEventListener('scroll', () => {
-        requestAnimationFrame(() => {
-            updateScrollIndicator(sections, dots);
-        });
-    }, { passive: true });
-    
-    // Add wheel event listener for smooth scrolling
-    document.addEventListener('wheel', (e) => handleScroll(e, sections), { passive: false });
-    
-    // Add keyboard navigation
-    document.addEventListener('keydown', (e) => {
-        const currentSection = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2).closest('section');
-        const currentIndex = Array.from(sections).indexOf(currentSection);
         
-        if (e.key === 'ArrowDown' && currentIndex < sections.length - 1) {
-            sections[currentIndex + 1].scrollIntoView({ behavior: 'smooth' });
-        } else if (e.key === 'ArrowUp' && currentIndex > 0) {
-            sections[currentIndex - 1].scrollIntoView({ behavior: 'smooth' });
-        }
-    });
+        document.body.appendChild(scrollIndicator);
+        
+        const dots = scrollIndicator.querySelectorAll('.scroll-dot');
+        dots[0].classList.add('active');
+        
+        // Update dots on scroll
+        window.addEventListener('scroll', () => {
+            requestAnimationFrame(() => {
+                updateScrollIndicator(sections, dots);
+            });
+        }, { passive: true });
+    }
+
+    // Different scroll behavior for mobile and desktop
+    if (isMobileDevice()) {
+        // Remove scroll snapping on mobile
+        document.body.style.overflow = 'auto';
+        sections.forEach(section => {
+            section.style.scrollSnapAlign = 'none';
+            section.style.scrollSnapStop = 'none';
+        });
+    } else {
+        // Desktop scroll handling
+        document.addEventListener('wheel', (e) => handleScroll(e, sections), { passive: false });
+        document.addEventListener('keydown', handleKeyboardNavigation);
+    }
 }
 
 function updateScrollIndicator(sections, dots) {
@@ -119,6 +183,8 @@ function updateScrollIndicator(sections, dots) {
 }
 
 function handleScroll(e, sections) {
+    if (isMobileDevice()) return; // Don't handle scroll on mobile
+    
     e.preventDefault();
     
     const currentTime = Date.now();
@@ -139,6 +205,29 @@ function handleScroll(e, sections) {
     setTimeout(() => {
         isScrolling = false;
     }, scrollCooldown);
+}
+
+// Add keyboard navigation handler
+function handleKeyboardNavigation(e) {
+    if (isMobileDevice()) return;
+    
+    const sections = document.querySelectorAll('section');
+    const currentSection = document.elementFromPoint(window.innerWidth / 2, window.innerHeight / 2).closest('section');
+    const currentIndex = Array.from(sections).indexOf(currentSection);
+    
+    if (e.key === 'ArrowDown' && currentIndex < sections.length - 1) {
+        sections[currentIndex + 1].scrollIntoView({ behavior: 'smooth' });
+    } else if (e.key === 'ArrowUp' && currentIndex > 0) {
+        sections[currentIndex - 1].scrollIntoView({ behavior: 'smooth' });
+    }
+}
+
+// Add helper function to detect mobile devices
+function isMobileDevice() {
+    return (window.innerWidth <= 768) || 
+           ('ontouchstart' in window) ||
+           (navigator.maxTouchPoints > 0) ||
+           (navigator.msMaxTouchPoints > 0);
 }
 
 // Keep the smooth scrolling for navigation links

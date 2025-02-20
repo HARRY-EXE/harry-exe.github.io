@@ -1,22 +1,72 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
+    <!-- Essential Meta Tags -->
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Harry Crexx - Full Stack Developer & AI Specialist. Passionate self-taught developer from Nepal specializing in web development, AI integration, mobile apps, and cloud services.">
+    <meta name="keywords" content="Harry Crexx, Developer, Full Stack Developer, AI Integration, Mobile Apps, Cloud Services, Nepal Developer, Python Developer, JavaScript Developer">
+    <meta name="author" content="Harry Crexx">
+    <meta name="robots" content="index, follow">
+    <meta name="language" content="English">
+
+    <!-- Open Graph Meta Tags for Social Media -->
+    <meta property="og:title" content="Harry Crexx - Portfolio">
+    <meta property="og:description" content="Full Stack Developer & AI Specialist from Nepal. Passionate about creating innovative solutions with modern technologies.">
+    <meta property="og:image" content="assets/logo.png">
+    <meta property="og:url" content="https://harry-exe.github.io/">
+    <meta property="og:type" content="website">
+
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Harry Crexx - Portfolio">
+    <meta name="twitter:description" content="Full Stack Developer & AI Specialist from Nepal. Passionate about creating innovative solutions with modern technologies.">
+    <meta name="twitter:image" content="assets/logo.png">
+
+    <!-- Mobile App Meta Tags -->
     <meta name="theme-color" content="#111111">
     <meta name="mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-capable" content="yes">
     <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+    
+    <!-- Google Site Verification -->
     <meta name="google-site-verification" content="yWWdotwMGyYNugH4XhiUz5Oem2JhiZz2cn2BvQcwBJc" />
-    <title>Harry Crexx - Portfolio</title>
-    <!-- Add favicon -->
+
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://harry-exe.github.io/">
+
+    <title>Harry Crexx - Full Stack Developer & AI Specialist | Portfolio</title>
+
+    <!-- Favicon -->
     <link rel="icon" type="image/x-icon" href="assets/icon.ico">
+    <link rel="apple-touch-icon" href="assets/icon.ico">
+
+    <!-- Stylesheets -->
     <link rel="stylesheet" href="css/styles.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
-    <!-- Add Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
-    <!-- Add AOS library for scroll animations -->
     <link href="https://unpkg.com/aos@2.3.1/dist/aos.css" rel="stylesheet">
+
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+    {
+        "@context": "http://schema.org",
+        "@type": "Person",
+        "name": "Harry Crexx",
+        "url": "https://harry-exe.github.io/",
+        "sameAs": [
+            "https://www.youtube.com/@harrynp",
+            "https://t.me/harryexeee",
+            "https://github.com/harry-exe"
+        ],
+        "jobTitle": "Full Stack Developer",
+        "description": "High School student and self-taught developer specializing in full-stack development, AI integration, mobile apps, and cloud services.",
+        "address": {
+            "@type": "PostalAddress",
+            "addressCountry": "Nepal"
+        }
+    }
+    </script>
 </head>
 <body>
     <div id="splash-screen">
@@ -45,209 +95,217 @@
     </nav>
     <div class="overlay"></div>
 
-    <section id="home">
-        <div class="hero">
-            <div class="hero-left" data-aos="fade-right">
-            <div class="hero-content">
-                <h1>Harry Crexx</h1>
-                    
-                    <div class="hero-about">
-                        <p class="bio">
-                            I am currently a High School student and a passionate self-taught developer. Have an idea? Let's collaborate!
-                        </p>
-                        <div class="contact-info">
-                            <a href="mailto:harrycrexx@yahoo.com" class="contact-item">
-                                <i class="fas fa-envelope"></i>
-                                harrycrexx@yahoo.com
-                            </a>
-                            <div class="contact-item">
-                                <i class="fas fa-map-marker-alt"></i>
-                                Nepal
-                    </div>
-                    </div>
+    <main>
+        <section id="home">
+            <div class="hero">
+                <div class="hero-left" data-aos="fade-right">
+                <div class="hero-content">
+                    <h1>Harry Crexx</h1>
+                        
+                        <div class="hero-about">
+                            <p class="bio">
+                                I am currently a High School student and a passionate self-taught developer. Have an idea? Let's collaborate!
+                            </p>
+                            <div class="contact-info">
+                                <a href="mailto:harrycrexx@yahoo.com" class="contact-item">
+                                    <i class="fas fa-envelope"></i>
+                                    harrycrexx@yahoo.com
+                                </a>
+                                <div class="contact-item">
+                                    <i class="fas fa-map-marker-alt"></i>
+                                    Nepal
+                        </div>
+                            </div>
+                            </div>
+
+                            <div class="cta-buttons">
+                                <a href="#projects" class="btn primary">
+                                    <i class="fas fa-code"></i>
+                                    View Projects
+                                </a>
+                                <a href="https://t.me/harryexeee" target="_blank" class="btn secondary">
+                                    <i class="fab fa-telegram"></i>
+                                    Get in Touch
+                                </a>
+                            </div>
+                        </div>
                     </div>
 
-                    <div class="cta-buttons">
-                        <a href="#projects" class="btn primary">
-                            <i class="fas fa-code"></i>
-                            View Projects
-                        </a>
-                        <a href="https://t.me/harryexeee" target="_blank" class="btn secondary">
-                            <i class="fab fa-telegram"></i>
-                            Get in Touch
-                        </a>
+                    <div class="hero-right" data-aos="fade-left">
+                        <div class="expertise-grid">
+                            <div class="expertise-card">
+                                <div class="expertise-icon">
+                                    <i class="fas fa-code"></i>
+                                </div>
+                                <h3>Development</h3>
+                                <p>Full-stack development with modern technologies</p>
+                            </div>
+                            <div class="expertise-card">
+                                <div class="expertise-icon">
+                                    <i class="fas fa-robot"></i>
+                                </div>
+                                <h3>AI Integration</h3>
+                                <p>Building intelligent solutions with AI models</p>
+                            </div>
+                            <div class="expertise-card">
+                                <div class="expertise-icon">
+                                    <i class="fas fa-mobile-alt"></i>
+                                </div>
+                                <h3>Mobile Apps</h3>
+                                <p>Native and cross-platform mobile applications</p>
+                            </div>
+                            <div class="expertise-card">
+                                <div class="expertise-icon">
+                                    <i class="fas fa-cloud"></i>
+                        </div>
+                                <h3>Cloud Services</h3>
+                                <p>Scalable cloud solutions and deployments</p>
+                        </div>
+                        </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="hero-right" data-aos="fade-left">
-                <div class="expertise-grid">
-                    <div class="expertise-card">
-                        <div class="expertise-icon">
-                            <i class="fas fa-code"></i>
+        <section id="technologies">
+            <h2>Technologies</h2>
+            <div class="tech-grid">
+                <div class="tech-category" data-aos="fade-up">
+                    <h3>Programming Languages</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <i class="fab fa-python"></i>
+                            <div class="tech-info">
+                                <span class="tech-name">Python</span>
+                                <div class="tech-level">Advanced</div>
+                            </div>
                         </div>
-                        <h3>Development</h3>
-                        <p>Full-stack development with modern technologies</p>
+                        <div class="tech-item">
+                            <i class="fab fa-java"></i>
+                            <div class="tech-info">
+                                <span class="tech-name">Java</span>
+                                <div class="tech-level">Intermediate</div>
+                        </div>
+                        </div>
+                        <div class="tech-item">
+                            <i class="fab fa-js"></i>
+                            <div class="tech-info">
+                                <span class="tech-name">JavaScript</span>
+                                <div class="tech-level">Advanced</div>
+                            </div>
+                        </div>
                     </div>
-                    <div class="expertise-card">
-                        <div class="expertise-icon">
+                </div>
+
+                <div class="tech-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3>AI & Machine Learning</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <i class="fas fa-brain"></i>
+                            <div class="tech-info">
+                                <span class="tech-name">GPT-4</span>
+                                <div class="tech-level">Expert</div>
+                            </div>
+                        </div>
+                        <div class="tech-item">
                             <i class="fas fa-robot"></i>
+                            <div class="tech-info">
+                                <span class="tech-name">LLAMA 2</span>
+                                <div class="tech-level">Advanced</div>
+                            </div>
                         </div>
-                        <h3>AI Integration</h3>
-                        <p>Building intelligent solutions with AI models</p>
                     </div>
-                    <div class="expertise-card">
-                        <div class="expertise-icon">
-                            <i class="fas fa-mobile-alt"></i>
-                        </div>
-                        <h3>Mobile Apps</h3>
-                        <p>Native and cross-platform mobile applications</p>
-                    </div>
-                    <div class="expertise-card">
-                        <div class="expertise-icon">
-                            <i class="fas fa-cloud"></i>
-        </div>
-                        <h3>Cloud Services</h3>
-                        <p>Scalable cloud solutions and deployments</p>
                 </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <section id="technologies">
-        <h2>Technologies</h2>
-        <div class="tech-grid">
-            <div class="tech-category" data-aos="fade-up">
-                <h3>Programming Languages</h3>
-                <div class="tech-items">
-                    <div class="tech-item">
-                        <i class="fab fa-python"></i>
-                        <div class="tech-info">
-                            <span class="tech-name">Python</span>
-                            <div class="tech-level">Advanced</div>
+                <div class="tech-category" data-aos="fade-up" data-aos-delay="200">
+                    <h3>Web Technologies</h3>
+                    <div class="tech-items">
+                        <div class="tech-item">
+                            <i class="fab fa-html5"></i>
+                            <div class="tech-info">
+                                <span class="tech-name">HTML5</span>
+                                <div class="tech-level">Expert</div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fab fa-java"></i>
-                        <div class="tech-info">
-                            <span class="tech-name">Java</span>
-                            <div class="tech-level">Intermediate</div>
-                    </div>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fab fa-js"></i>
-                        <div class="tech-info">
-                            <span class="tech-name">JavaScript</span>
-                            <div class="tech-level">Advanced</div>
+                        <div class="tech-item">
+                            <i class="fab fa-css3-alt"></i>
+                            <div class="tech-info">
+                                <span class="tech-name">CSS3</span>
+                                <div class="tech-level">Advanced</div>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
+        </section>
 
-            <div class="tech-category" data-aos="fade-up" data-aos-delay="100">
-                <h3>AI & Machine Learning</h3>
-                <div class="tech-items">
-                    <div class="tech-item">
-                        <i class="fas fa-brain"></i>
-                        <div class="tech-info">
-                            <span class="tech-name">GPT-4</span>
-                            <div class="tech-level">Expert</div>
+        <!-- Add Technical Skills Section -->
+        <section id="skills">
+            <h2>Technical Skills</h2>
+            <div class="skills-grid">
+                <div class="skill-category" data-aos="fade-up">
+                    <h3>Development</h3>
+                    <div class="skill-items">
+                        <div class="skill-item">
+                            <span>Web Development</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 85%"></div>
+                            </div>
                         </div>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fas fa-robot"></i>
-                        <div class="tech-info">
-                            <span class="tech-name">LLAMA 2</span>
-                            <div class="tech-level">Advanced</div>
+                        <div class="skill-item">
+                            <span>Mobile Development</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 75%"></div>
+                            </div>
+                        </div>
+                        <div class="skill-item">
+                            <span>API Development</span>
+                            <div class="progress-bar">
+                                <div class="progress" style="width: 90%"></div>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-            <div class="tech-category" data-aos="fade-up" data-aos-delay="200">
-                <h3>Web Technologies</h3>
-                <div class="tech-items">
-                    <div class="tech-item">
-                        <i class="fab fa-html5"></i>
-                        <div class="tech-info">
-                            <span class="tech-name">HTML5</span>
-                            <div class="tech-level">Expert</div>
-                        </div>
-                    </div>
-                    <div class="tech-item">
-                        <i class="fab fa-css3-alt"></i>
-                        <div class="tech-info">
-                            <span class="tech-name">CSS3</span>
-                            <div class="tech-level">Advanced</div>
-                        </div>
+                <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
+                    <h3>Tools & Frameworks</h3>
+                    <div class="tools-grid">
+                        <span class="tool-tag">Git</span>
+                        <span class="tool-tag">Docker</span>
+                        <span class="tool-tag">Django</span>
+                        <span class="tool-tag">Flask</span>
+                        <span class="tool-tag">React</span>
+                        <span class="tool-tag">Node.js</span>
+                        <span class="tool-tag">MongoDB</span>
+                        <span class="tool-tag">PostgreSQL</span>
                     </div>
                 </div>
             </div>
-        </div>
-    </section>
+        </section>
 
-    <!-- Add Technical Skills Section -->
-    <section id="skills">
-        <h2>Technical Skills</h2>
-        <div class="skills-grid">
-            <div class="skill-category" data-aos="fade-up">
-                <h3>Development</h3>
-                <div class="skill-items">
-                    <div class="skill-item">
-                        <span>Web Development</span>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 85%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>Mobile Development</span>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 75%"></div>
-                        </div>
-                    </div>
-                    <div class="skill-item">
-                        <span>API Development</span>
-                        <div class="progress-bar">
-                            <div class="progress" style="width: 90%"></div>
-                        </div>
-                    </div>
-                </div>
+        <section id="projects">
+            <h2>Projects</h2>
+            <div class="projects-grid">
+                <!-- Project cards will be dynamically added via JavaScript -->
             </div>
+        </section>
 
-            <div class="skill-category" data-aos="fade-up" data-aos-delay="100">
-                <h3>Tools & Frameworks</h3>
-                <div class="tools-grid">
-                    <span class="tool-tag">Git</span>
-                    <span class="tool-tag">Docker</span>
-                    <span class="tool-tag">Django</span>
-                    <span class="tool-tag">Flask</span>
-                    <span class="tool-tag">React</span>
-                    <span class="tool-tag">Node.js</span>
-                    <span class="tool-tag">MongoDB</span>
-                    <span class="tool-tag">PostgreSQL</span>
-                </div>
+        <!-- Work Together section -->
+        <section id="work-together">
+            <div class="work-together-content" data-aos="fade-up">
+                <h2>Interested in Working Together?</h2>
+                <p>Let's turn your ideas into reality</p>
+                <a href="https://www.facebook.com/yoursharryy" target="_blank" class="btn primary">
+                    <i class="fab fa-facebook"></i> Send Message
+                </a>
             </div>
-        </div>
-    </section>
+        </section>
+    </main>
 
-    <section id="projects">
-        <h2>Projects</h2>
-        <div class="projects-grid">
-            <!-- Project cards will be dynamically added via JavaScript -->
-        </div>
-    </section>
-
-    <!-- Work Together section -->
-    <section id="work-together">
-        <div class="work-together-content" data-aos="fade-up">
-            <h2>Interested in Working Together?</h2>
-            <p>Let's turn your ideas into reality</p>
-            <a href="https://www.facebook.com/yoursharryy" target="_blank" class="btn primary">
-                <i class="fab fa-facebook"></i> Send Message
-            </a>
-        </div>
-    </section>
+    <!-- Footer -->
+    <footer>
+        <p>&copy; 2024 Harry Crexx. All rights reserved.</p>
+    </footer>
 
     <script src="scripts/script.js"></script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
